@@ -1,2 +1,2 @@
-This repository contain R script for Bulk RNAseq analysis P0wnt1 vs P0Control and P14Wnt1 vs P14Control
-same script was used for P0wnt1 vs P0Control and P14Wnt1 vs P14Control except that in P0 we used the additive model including the batch effect and in P14 we used the simple model.
+This repository contain bash and R script for conducting Bulk RNAseq analysis comparing P0Wnt1 versus P0Control and P14Wnt1 versus P14Control samples. The script begins with bash code before transitioning to R script implementation.
+same script was used for P0wnt1 vs P0Control and P14Wnt1 vs P14Control except that in P0 we used the Deseq2 additive model including the batch effect meanwhile in P14 we used the Deseq2 simple model.

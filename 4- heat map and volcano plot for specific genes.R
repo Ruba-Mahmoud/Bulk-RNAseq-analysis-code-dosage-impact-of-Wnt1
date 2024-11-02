@@ -6,7 +6,7 @@ library(limma)
 #heatmap showing genes of canonical wnt pathway
 
 #we filter rows for our target genes in the symbol column
-Sigsymb <- shrink.tab %>% dplyr::filter(grepl('Wnt|Dvl|Dkk|Fzd|Lrp|Axin|Ctnnb1|Notum|Sost|Serpinf1', Symbol)& FDR < 0.05)
+Sigsymb <- shrink.tab %>% dplyr::filter(grepl('Wnt|Dvl|Dkk|Fzd|Lrp5|Lrp6|Ror1|Ror2|Ryk|Axin|Ctnnb1|Notum|Sost|Serpinf1', Symbol)& FDR < 0.05)
 Sigsymb.h <- Sigsymb %>% pull(Symbol)
 SygGene <- Sigsymb %>% pull (GeneID)
 
@@ -59,7 +59,7 @@ Heatmap(ag.z.mat.l, name = "z-score", col = myRamp.1, show_row_names = T,split =
 
 
 #repeat the process for Receptor genes
-Sigsymb.r <- shrink.tab %>% dplyr::filter(grepl('Fzd|Lrp5|Lrp6', Symbol) & FDR < 0.05)
+Sigsymb.r <- shrink.tab %>% dplyr::filter(grepl('Fzd|Lrp5|Lrp6|Ror1|Ror2|Ryk', Symbol) & FDR < 0.05)
 Sigsymb.h.r <- Sigsymb.r %>% pull(Symbol)
 
 SygGene.r <- Sigsymb.r %>% pull (GeneID)
@@ -127,9 +127,9 @@ Heatmap(ag.z.mat.i, name = "z-score", col = myRamp.1, show_row_names = T,
 #volcano plot of specific genes
 
 library(EnhancedVolcano)
-Sigsymb <- shrink.tab %>% dplyr::filter(grepl('Wnt|Dvl|Dkk1|Dkk2|Dkk3|Fzd|Lrp5|Lrp6|Axin|Ctnnb1|Notum|Sost|Serpinf1', Symbol))
+Sigsymb <- shrink.tab %>% dplyr::filter(grepl('Wnt|Dvl|Dkk1|Dkk2|Dkk3|Fzd|Lrp5|Lrp6|Ror1|Ror2|Ryk|Axin|Ctnnb1|Notum|Sost|Serpinf1', Symbol))
 Sigsymb.l <- shrink.tab %>% dplyr::filter(grepl('Wnt', Symbol))%>% pull(Symbol)
-Sigsymb.r <- shrink.tab %>% dplyr::filter(grepl('Fzd|Lrp5|Lrp6', Symbol))%>% pull(Symbol)
+Sigsymb.r <- shrink.tab %>% dplyr::filter(grepl('Fzd|Lrp5|Lrp6|Ror1|Ror2|Ryk', Symbol))%>% pull(Symbol)
 Sigsymb.s <- shrink.tab %>% dplyr::filter(grepl('Dvl|Axin|Ctnnb1', Symbol))%>% pull(Symbol)
 sigsymb.i <- shrink.tab %>% dplyr::filter(grepl('Dkk1|Dkk2|Dkk3|Notum|Serpinf1|Sost', Symbol)) %>% pull(Symbol)
 
